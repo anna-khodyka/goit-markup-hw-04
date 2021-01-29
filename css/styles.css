@@ -26,6 +26,7 @@ font-family: Roboto;
   --accent-color: #2196f3;
   --primary-white-color: #ffffff;
   --adress-color: rgba(255, 255, 255, 0.6);
+  --client-color: #afb1b8;
 
   --white-background: #ffffff;
   --dark-background: #2f303a;
@@ -51,6 +52,7 @@ a,
 address {
   text-decoration: none;
   font-style: normal;
+  color: inherit;
 }
 
 ul {
@@ -98,6 +100,7 @@ img {
 .features,
 .team,
 .directions,
+.clients,
 .portfolio {
   padding-top: 94px;
   padding-bottom: 94px;
@@ -119,7 +122,10 @@ header {
   display: flex;
 }
 
-.address-nav li:not(:last-child),
+.address-nav li:not(:last-child) {
+  padding-right: 30px;
+}
+
 .pages-nav li:not(:last-child) {
   padding-right: 50px;
 }
@@ -159,6 +165,12 @@ header {
 
 .contacts {
   color: var(--secondary-text-color);
+  display: flex;
+}
+/*Иконки*/
+.email-icon {
+  fill: currentColor;
+  margin-right: 10px;
 }
 
 /*Hero секция*/
@@ -232,11 +244,23 @@ header {
   margin-right: 30px;
 }
 
+.features-icon-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--light-background);
+  width: 270px;
+  height: 120px;
+}
+.features-icon {
+}
+
 .features h2 {
   display: none;
 }
 
 .features-title {
+  margin-top: 30px;
   margin-bottom: 10px;
   font-weight: bold;
   font-size: 14px;
@@ -294,18 +318,84 @@ header {
   line-height: 1.19;
   text-align: center;
   background-color: var(--white-background);
-  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0px 0px 4px 4px;
 }
 
+.team-content {
+  padding: 30px 32px;
+}
 .team-name {
-  margin-top: 30px;
   margin-bottom: 10px;
 }
 
 .team-position {
-  margin-bottom: 30px;
+  margin-bottom: 16px;
   font-weight: normal;
   color: var(--secondary-text-color);
+}
+/*Иконки социальных сетей*/
+
+/*список соц сетей*/
+.social-links {
+  display: flex;
+  justify-content: space-between;
+}
+
+.social-links > a {
+  display: block;
+}
+
+/*Круглый фон иконки соц сети*/
+.social-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  fill: var(--client-color);
+}
+
+/*Круглый фон иконки соц сети в ФУТЕРЕ*/
+.footer-social .social-thumb {
+  background-color: rgba(255, 255, 255, 0.1);
+  fill: var(--primary-white-color);
+}
+
+/*Ховер для иконок соц сетей*/
+.social-thumb:hover,
+.social-thumb:focus {
+  background-color: var(--accent-background);
+  fill: var(--primary-white-color);
+}
+
+/*Постоянные клиенты*/
+.client-items {
+  display: flex;
+  justify-content: space-between;
+}
+
+.client-items > a {
+  display: block;
+}
+
+.client-thumb {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 170px;
+  height: 90px;
+  border: 1px solid var(--client-color);
+  border-radius: 4px;
+  fill: var(--client-color);
+}
+
+.client-thumb:hover,
+.client-thumb:focus {
+  fill: var(--accent-color);
+  border-color: var(--accent-color);
 }
 
 /*Подвал страницы*/
@@ -317,6 +407,10 @@ header {
   font-weight: normal;
   font-size: 14px;
   line-height: 1.71;
+}
+
+.footer .container {
+  display: flex;
 }
 
 .footer li:not(:last-child) {
@@ -336,6 +430,24 @@ header {
 .email,
 .telephone {
   color: var(--adress-color);
+}
+
+.footer-social {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  margin-left: 70px;
+  width: 206px;
+}
+
+.footer-join {
+  margin-bottom: 20px;
+  font-weight: bold;
+  font-size: 14px;
+  line-height: 1.14;
+  text-transform: uppercase;
+  color: var(--primary-white-color);
 }
 
 /*ПОРТФОЛИО*/
@@ -362,18 +474,15 @@ header {
   margin-right: 8px;
 }
 
-.filter-button.active {
-  color: var(--primary-white-color);
-  background-color: var(--accent-background);
-}
-
+.filter-button.active,
 .filter-button:hover,
 .filter-button:focus {
-  color: red;
-  background-color: yellow;
+  color: var(--primary-white-color);
+  background-color: var(--accent-background);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 }
 
-/*Краточки проектов*/
+/*Карточки проектов*/
 .projects {
   display: flex;
   flex-wrap: wrap;
