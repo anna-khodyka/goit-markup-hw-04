@@ -492,24 +492,19 @@ header {
   flex-basis: calc(100% / var(--project-column) - var(--project-gap));
   margin-right: var(--project-gap);
   margin-bottom: var(--project-gap);
-
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
-  overflow: hidden;
 }
 
 .project-link {
   display: block;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+  overflow: hidden;
 }
 
 .project-link:hover,
 .project-link:focus {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
-
-  /*добавила чтобы понимать работает ли ховер и фокус*/
-  color: red;
-  background-color: navy;
 }
 
 .project-info {
